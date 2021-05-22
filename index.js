@@ -27,6 +27,8 @@ document.addEventListener("beforeinstallprompt", (installEvent) => {
     eventPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === "accept") {
         console.log("userAccepted");
+        installBTN.style.display = "none";
+        installedText.style.display = "block";
       } else {
         console.log("userRefused");
       }
