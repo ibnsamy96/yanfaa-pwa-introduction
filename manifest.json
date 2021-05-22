@@ -1,0 +1,9 @@
+{
+  "background-color": "purple",
+  "name": "First PWA app name",
+  "short-name": "First PWA app short name",
+  "description": "First PWA App description",
+  "display": "fullscreen",
+  "icons": [{ "type": "image/png", "src": "./icon.png", "sizes": "192x192" }],
+  "start_url": "http://localhost:5500"
+}

@@ -15,7 +15,8 @@ if ("serviceWorker" in navigator) {
 
 let eventPrompt;
 
-document.addEventListener("beforeinstallprompt", (installEvent) => {
+window.addEventListener("beforeinstallprompt", (installEvent) => {
+  console.log("12");
   installEvent.preventDefault(); // to prevent default installation prompt in some chrome versions
   eventPrompt = installEvent; // save it in a variable to use it later
   console.log(eventPrompt);
@@ -25,7 +26,7 @@ document.addEventListener("beforeinstallprompt", (installEvent) => {
   installBTN.addEventListener("click", (clickEvent) => {
     eventPrompt.prompt();
     eventPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === "accept") {
+      if (choiceResult.outcome === "accepted") {
         console.log("userAccepted");
         installBTN.style.display = "none";
         installedText.style.display = "block";
